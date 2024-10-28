@@ -171,7 +171,7 @@ Ca sử dụng này cho phép Nhân viên cập nhật và nộp thông tin về
     - Chức năng chính: Chứa loại phương thức thanh toán (như nhận trực tiếp, gửi qua bưu điện, hoặc chuyển khoản) và các thông tin chi tiết liên quan.
   - Lớp Employee:
     - Vai trò: Đại diện cho nhân viên trong hệ thống. Lớp này chứa thông tin cá nhân và các phương thức thanh toán cùng thẻ thời gian của nhân viên. Được sử dụng trong cả 2 ca sử dụng "Payment" và "Maintain Timecard".
-    - Chức năng chính: Quản lý thông tin của nhân viên, bao gồm mã nhân viên, tên, vai trò, phương thức thanh toán, và danh sách thẻ thời gian. Nó kết nối các lớp Timecard và PaymentMethod, cho phép các ca sử dụng liên quan đến thanh toán và thẻ thời gian sử dụng thông tin chung.
+    - Chức năng chính: Quản lý thông tin của nhân viên, bao gồm mã nhân viên, tên, phương thức thanh toán, và danh sách thẻ thời gian. Nó kết nối các lớp Timecard và PaymentMethod, cho phép các ca sử dụng liên quan đến thanh toán và thẻ thời gian sử dụng thông tin chung.
   - Lớp Project:
     - Vai trò: Đại diện cho một dự án trong hệ thống.
     - Chức năng chính: Quản lý thông tin về các dự án, bao gồm mã dự án, tên dự án, và danh sách mã charge liên quan đến dự án đó.
@@ -179,5 +179,5 @@ Ca sử dụng này cho phép Nhân viên cập nhật và nộp thông tin về
     - Vai trò: Đại diện cho một mã charge cụ thể.
     - Chức năng chính: Lưu trữ thông tin về mã charge, bao gồm mô tả và số giờ tối đa có thể được ghi nhận cho mã charge đó.
   
-# Biểu đồ class
+## Biểu đồ class
 ![](https://www.planttext.com/api/plantuml/png/V5J1QeD04BtlLooUsb93UmqX19f20pK4qlO-MOTaMrUNTGsLaY_heP_KN-YggzrL4q59tfitCpjlzFVxPv5hKBeG2I4Is0ViaGOHy5IRcxvmWGnK7D0lGit54iZp3hLWTOLKMt0LJ-bMAvxk7HA5JB8ISPIi6rY2nYcjdguiZKTnez15FfAA7K3jyIahb64ZaBE76bWNOeVgbYwpOfVWl1QSoCY9NbVEcIYDUIuJA5lswlgyCeBKZ4vvSb5ZbzHlaF0ODC_IBQeZP-ZfZmtRdAUJdnoZDb0AJ3MDK1-odakMQoWlhoub3ePdJel6yyGVQrskoVTeFRIfpfeQqXG4zY3fDZFrUoF-0fa6ddckP-tSvlyjR5JsZant7SZc_w01Yw-7VJ1d7zf2xeuunLoug-Zg1sLZp9dYihApnmZuj4lPh61LnTcvC9pt5udq5wkAQIqO9GUxH4XdMN0_cTm49em6T_MlDi654D-ZxfstR1NNADmvaTQXGJOlYYpCcrrzSlu0003__mC0)
