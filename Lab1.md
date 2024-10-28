@@ -32,4 +32,21 @@ Một số cơ chế được đề xuất:
   - Audit and Change Log: Theo dõi và ghi lại các thay đổi trong hệ thống để bảo mật và xử lý tranh chấp.
   - Error Handling and Notifications: Cơ chế xử lý lỗi và thông báo cho người dùng khi có vấn đề xảy ra, nâng cao trải nghiệm và tính chính xác.
 
-## 3. Phân tích ca sử dụng Payment
+## 3. Phân tích ca sử dụng Payment:
+
+## 4. Phân tích ca sử dụng Maintain Timecard:
+# 1. Mô tả:
+Ca sử dụng này cho phép Nhân viên cập nhật và nộp thông tin về bảng chấm công. Nhân viên tính lương theo giờ và theo tháng phải nộp bảng chấm công hàng tuần ghi lại tất cả số giờ làm việc trong tuần đó và các dự án mà số giờ đó được tính phí. Nhân viên chỉ có thể thực hiện thay đổi trên bảng chấm công cho kỳ trả lương hiện tại và trước khi bảng chấm công được nộp.
+
+# 2. Các lớp phân tích:
+  - Boudary Class:
+      - Employee Interface: Cung cấp giao diện cho nhân viên để nhập giờ làm việc và gửi thẻ thời gian.
+      - Timecard UI: Giao diện hiển thị thông tin thẻ thời gian và danh sách số hiệu tính phí cho nhân viên.
+  - Control Class:
+      - TimecardManager: Quản lý quá trình tạo, lưu trữ, và gửi thẻ thời gian. Xác thực thông tin giờ làm việc trước khi gửi thẻ thời gian.
+      - ValidationService: Xác thực thông tin giờ làm việc và đảm bảo rằng các quy tắc (như giới hạn giờ làm) được tuân thủ.
+  - Entity Class:
+      - Employee: Lưu trữ thông tin về nhân viên, bao gồm ID, tên, vai trò và danh sách thẻ thời gian.
+      - Timecard: Lưu trữ thông tin về giờ làm việc, trạng thái gửi và các số hiệu tính phí liên quan.
+      - Project: Cung cấp thông tin về các dự án và số hiệu tính phí liên quan.
+      - Charge Number: Đại diện cho các số hiệu tính phí mà nhân viên có thể chọn để ghi nhận giờ làm việc.
