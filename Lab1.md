@@ -59,7 +59,7 @@ Ca sử dụng này cho phép Nhân viên chọn phương thức thanh toán. Ph
 ![Class Diagram](https://www.planttext.com/api/plantuml/png/V591JiCm4Bpx5LPE0IaLN2jKzG07990GVS5IBs39iQtiDfA5U1a7diGNS70SuhIGsyxEZ6Tty_NnkIM6ZW-j4Ni3HFAczSO5HFacvF3XMD-gjTnnf-rBmYsqM28UGekMxv5VNIG_p4lnBaR_0iwFSF0BCuKCsj04JlgSxn6z8ysk2ykaKNIdYQyoSvFQpzgg3DN7Kvsj9-l4FtW5Z4UANrfKz4x_DTeE3UvZl9oEVkg2KcU7DB4cRo2a5fMz7emUqeow-ReYxyavWs37AtIkrmglq_xgnHvdcQT3LvULR1fPNQnMvzNYRAT7QfhDYJkKvFziiv7OebN3h_SD003__mC0)
 ### 7. Giải thích biểu đồ lớp:
   - Employee:
-    - Thuộc tính: employeeId, name, paymentMethod.
+    - Thuộc tính: employeeId, name, role, paymentMethod, timecards.
   - PaymentMethod:
     - Thuộc tính: type, details.
   - EmployeeRepository:
@@ -92,7 +92,8 @@ Ca sử dụng này cho phép Nhân viên cập nhật và nộp thông tin về
       - ValidationService: Xác thực thông tin giờ làm việc và đảm bảo rằng các quy tắc (như giới hạn giờ làm) được tuân thủ.
   - Entity Class:
       - Employee:
-        - Chứa các thuộc tính như employeeId, name, role, timecards.
+        - Chứa các thuộc tính như employeeId, name.
+        - Phương thức: timecards.
         - Lưu trữ thông tin về nhân viên, bao gồm ID, tên, vai trò và danh sách thẻ thời gian.
       - Timecard:
         - Chứa các thuộc tính như timecardId, employeeId, startDate, endDate, status, chargeHours.
@@ -109,7 +110,7 @@ Ca sử dụng này cho phép Nhân viên cập nhật và nộp thông tin về
   - Project có mối quan hệ một-nhiều với Charge Number (một dự án có thể có nhiều số hiệu tính phí).
   - TimecardManager và ValidationService chịu trách nhiệm xử lý các thao tác và xác thực liên quan đến thẻ thời gian.
 ### 6. Biểu đồ lớp: 
-![Class Diagram](https://www.planttext.com/api/plantuml/png/T5FTIiCm5BxFKuHUgTYXjsMCWHCSk25ClS-IK2D9Kv9qECGdyy97yXLisYJBajgBqdm__SuvFVtz_bbgWvJf10S0SwGrV6Q2OgJ8onf-0ZXSXEcMewDdBYx1LwhUe0RLL0MB6CvJZbV46K66oMP7rO5X6Zo7aQ4FibCwjjoBbiiZzSeIKWUiIGLtHh6cTaI314qW9NaA6LUMhk0ZqsRkorpaVOL8xyaY_wrb6EogxwU2zkxb3ScmNcawdTZn6rBrE8iARb0xlnk0RIVsL5t3bUpsd4OLFodvJh491RVZEIlBuTjyKZWAyAE9GwEm60w9iJ-B9LHZnLhxtHD6e0_NvTYJJOcMi2mNwPQTUBzsLkItP9Bqs2IPhUGf01OtizbLqSjWSJiynQs3i9cEjBBH40BzTyaKPoy2otunx5_u1m00__y30000)
+![Class Diagram](https://www.planttext.com/api/plantuml/png/T5FTIiCm5BxlKuHUgTYXjsMCWHCSk25ClJzB3ZMIj2L9XqDyCYzy95_1_YHPrjHUbERxoNTESlhx_RFK1fHff4WIAa1hyimbKb3iPKq-4z8_ZEjQmD4n5vV9rrYzWH8ALDuY-_MKunK4Ps1uLUvG7JX5xpaC33vKZTAXvLxMeZgYKsO4BR1cETaPnSl24YL87476rg1pyiYrcRkQ5d4JVd_dYVR_DxW_nLLRV4wwjvENBC9QfMdqo4xVG1L3updPG3s_wu5j8_UehicgQlO2WugVLFMErFY2ws4TbMNnRNmiD0XmHnE61c4Xx1D3VnJBK5F5w-wIHuo43zlbq5EN4anSbYt68tNYtOnr8ZSIawJ39ibe_au19BsPpQxILaRIs_uhR3tnOsZ9JZOOVA2xbqXnjb6oR0UZ_UN-0000__y30000)
 ### 7. Giải thích biểu đồ lớp:
   - TimecardUI
       - Nhiệm vụ: Cung cấp giao diện cho người dùng để hiển thị thông tin về thẻ thời gian và cho phép nhân viên nhập giờ làm việc.
@@ -151,3 +152,32 @@ Ca sử dụng này cho phép Nhân viên cập nhật và nộp thông tin về
         - chargeNumberId: ID duy nhất của số hiệu tính phí.
         - description: Mô tả về số hiệu tính phí.
         - maxHours: Giới hạn số giờ làm việc tối đa cho số hiệu tính phí này.
+      
+## 5. Hợp nhất kết quả phân tích:
+  - Lớp Timecard:
+    - Vai trò: Đại diện cho một thẻ thời gian của nhân viên. Nó lưu trữ thông tin về các khoảng thời gian làm việc.
+    - Chức năng chính: Quản lý thông tin liên quan đến giờ công của nhân viên trong một khoảng thời gian xác định.
+  - Lớp TimecardUI:
+    - Vai trò: Giao diện người dùng cho việc hiển thị thông tin thẻ thời gian.
+    - Chức năng chính: Cung cấp các phương thức để người dùng có thể xem và tương tác với thẻ thời gian.
+  - Lớp TimecardManager:
+    - Vai trò: Quản lý các thao tác liên quan đến thẻ thời gian, như tạo mới, sửa đổi hoặc xóa thẻ thời gian.
+    - Chức năng chính: Thực hiện các hành động liên quan đến thẻ thời gian và gọi đến các dịch vụ xác thực khi cần thiết.
+  - Lớp ValidationService:
+    - Vai trò: Dịch vụ để xác thực thông tin trong thẻ thời gian.
+    - Chức năng chính: Đảm bảo rằng các giờ làm việc được ghi nhận là hợp lệ và đáp ứng các tiêu chuẩn đã định.
+  - Lớp PaymentMethod:
+    - Vai trò: Lưu trữ thông tin về phương thức thanh toán của nhân viên.
+    - Chức năng chính: Chứa loại phương thức thanh toán (như nhận trực tiếp, gửi qua bưu điện, hoặc chuyển khoản) và các thông tin chi tiết liên quan.
+  - Lớp Employee:
+    - Vai trò: Đại diện cho nhân viên trong hệ thống. Lớp này chứa thông tin cá nhân và các phương thức thanh toán cùng thẻ thời gian của nhân viên. Được sử dụng trong cả 2 ca sử dụng "Payment" và "Maintain Timecard".
+    - Chức năng chính: Quản lý thông tin của nhân viên, bao gồm mã nhân viên, tên, vai trò, phương thức thanh toán, và danh sách thẻ thời gian. Nó kết nối các lớp Timecard và PaymentMethod, cho phép các ca sử dụng liên quan đến thanh toán và thẻ thời gian sử dụng thông tin chung.
+  - Lớp Project:
+    - Vai trò: Đại diện cho một dự án trong hệ thống.
+    - Chức năng chính: Quản lý thông tin về các dự án, bao gồm mã dự án, tên dự án, và danh sách mã charge liên quan đến dự án đó.
+  - Lớp ChargeNumber:
+    - Vai trò: Đại diện cho một mã charge cụ thể.
+    - Chức năng chính: Lưu trữ thông tin về mã charge, bao gồm mô tả và số giờ tối đa có thể được ghi nhận cho mã charge đó.
+  
+Biểu đồ class
+![](https://www.planttext.com/api/plantuml/png/V5J1QeD04BtlLooUsb93UmqX19f20pK4qlO-MOTaMrUNTGsLaY_heP_KN-YggzrL4q59tfitCpjlzFVxPv5hKBeG2I4Is0ViaGOHy5IRcxvmWGnK7D0lGit54iZp3hLWTOLKMt0LJ-bMAvxk7HA5JB8ISPIi6rY2nYcjdguiZKTnez15FfAA7K3jyIahb64ZaBE76bWNOeVgbYwpOfVWl1QSoCY9NbVEcIYDUIuJA5lswlgyCeBKZ4vvSb5ZbzHlaF0ODC_IBQeZP-ZfZmtRdAUJdnoZDb0AJ3MDK1-odakMQoWlhoub3ePdJel6yyGVQrskoVTeFRIfpfeQqXG4zY3fDZFrUoF-0fa6ddckP-tSvlyjR5JsZant7SZc_w01Yw-7VJ1d7zf2xeuunLoug-Zg1sLZp9dYihApnmZuj4lPh61LnTcvC9pt5udq5wkAQIqO9GUxH4XdMN0_cTm49em6T_MlDi654D-ZxfstR1NNADmvaTQXGJOlYYpCcrrzSlu0003__mC0)
