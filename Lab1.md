@@ -33,6 +33,46 @@ Một số cơ chế được đề xuất:
   - Error Handling and Notifications: Cơ chế xử lý lỗi và thông báo cho người dùng khi có vấn đề xảy ra, nâng cao trải nghiệm và tính chính xác.
 
 ## 3. Phân tích ca sử dụng Payment:
+### 1. Mô tả:
+Ca sử dụng này cho phép Nhân viên chọn phương thức thanh toán. Phương thức thanh toán xác định cách mà Nhân viên sẽ nhận tiền lương. Nhân viên có thể chọn một trong các cách sau: nhận séc trực tiếp, nhận qua bưu điện, hoặc để tiền lương được chuyển trực tiếp vào một tài khoản ngân hàng cụ thể
+
+### 2. Các lớp phân tích:
+  - Boundary Class: Employee Interface.
+  - Control Class: PaymentMethodSelector.
+  - Entity Classes: Employee, PaymentMethod, EmployeeRepository.
+### 3. Biểu đồ Sequence:
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/V99BQiCm54NdMeN8o8Lc0ncK5E911u7WGEUlrWjve5-bPuFNra6Nr2rKyYT5ZTkHXExHlLUVhu_FVMG8t1aje6KNP6syTWEYy6cPMl9WMMvEC1YqV4I-EdL6ZPdTI8ZoT3oNw6BGe7UH4ZQCNDtyupWx2R5ibjkdx2ntCevX1LqzYAmbf6uI4V2zmyZFFP26DuqJ51ELvEtD2ExrqINRBAaxgIXw3SCFysUbkGiF7ii-FMXIm5W0HHMAhvbPT_V1zQJmW9pwnafDOndH-HomxArmdhoeHsd6r2bmfYzarGhxgzGY781X9QnyWLkhjJjidRrGCC3aR3hZ7gtA_-iR003__mC0)
+### 4. Nhiệm vụ của các lớp phân tích:
+  - Boundary Class:
+    - Employee Interface: Giao diện mà nhân viên sử dụng để chọn phương thức thanh toán.
+  - Control Class:
+    - PaymentMethodSelector: Lớp xử lý logic cho việc chọn phương thức thanh toán, xác thực lựa chọn của nhân viên.
+  - Entity Classes:
+    - Employee: Đại diện cho nhân viên trong hệ thống với các thông tin liên quan đến nhân viên.
+    - PaymentMethod: Đại diện cho phương thức thanh toán mà nhân viên có thể chọn (pick-up, mail, direct deposit).
+    - EmployeeRepository: Quản lý thông tin nhân viên trong hệ thống, bao gồm việc tìm kiếm và cập nhật thông tin của nhân viên.
+### 5. Quan hệ giữa các lớp:
+  - Employee và PaymentMethod: Một nhân viên có thể có nhiều phương thức thanh toán, nhưng mỗi phương thức thanh toán thuộc về một nhân viên.
+  - PaymentMethodSelector: Lớp này liên kết với EmployeeRepository để truy xuất và cập nhật thông tin nhân viên.
+  - PaymentMethod: Lớp này được sử dụng bởi PaymentMethodSelector để xác định phương thức thanh toán của nhân viên.
+### 6. Biểu đồ lớp:
+![Class Diagram](https://www.planttext.com/api/plantuml/png/V591JiCm4Bpx5LPE0IaLN2jKzG07990GVS5IBs39iQtiDfA5U1a7diGNS70SuhIGsyxEZ6Tty_NnkIM6ZW-j4Ni3HFAczSO5HFacvF3XMD-gjTnnf-rBmYsqM28UGekMxv5VNIG_p4lnBaR_0iwFSF0BCuKCsj04JlgSxn6z8ysk2ykaKNIdYQyoSvFQpzgg3DN7Kvsj9-l4FtW5Z4UANrfKz4x_DTeE3UvZl9oEVkg2KcU7DB4cRo2a5fMz7emUqeow-ReYxyavWs37AtIkrmglq_xgnHvdcQT3LvULR1fPNQnMvzNYRAT7QfhDYJkKvFziiv7OebN3h_SD003__mC0)
+### 7. Giải thích biểu đồ lớp:
+  - Employee:
+    - Thuộc tính: employeeId, name, paymentMethod.
+  - PaymentMethod:
+    - Thuộc tính: type, details.
+  - EmployeeRepository:
+    - Thuộc tính: employees.
+    - Phương thức:
+      - findEmployee(employeeId: String): Employee: Tìm kiếm nhân viên theo mã nhân viên.
+      - updateEmployee(employee: Employee): void: Cập nhật thông tin của nhân viên.
+  - PaymentMethodSelector:
+    - Phương thức:
+      - selectPaymentMethod(): void: Bắt đầu quy trình chọn phương thức thanh toán.
+      - displayMethods(): void: Hiển thị các phương thức thanh toán khả dụng.
+      - validateMethod(type: String): boolean: Xác thực phương thức thanh toán đã chọn.
+      - provideDetails(details: String): void: Cung cấp thông tin chi tiết cho phương thức thanh toán.
 
 ## 4. Phân tích ca sử dụng Maintain Timecard:
 ### 1. Mô tả:
