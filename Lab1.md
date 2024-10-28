@@ -179,5 +179,5 @@ Ca sử dụng này cho phép Nhân viên cập nhật và nộp thông tin về
     - Vai trò: Đại diện cho một mã charge cụ thể.
     - Chức năng chính: Lưu trữ thông tin về mã charge, bao gồm mô tả và số giờ tối đa có thể được ghi nhận cho mã charge đó.
   
-Biểu đồ class
+# Biểu đồ class
 ![](https://www.planttext.com/api/plantuml/png/V5J1QeD04BtlLooUsb93UmqX19f20pK4qlO-MOTaMrUNTGsLaY_heP_KN-YggzrL4q59tfitCpjlzFVxPv5hKBeG2I4Is0ViaGOHy5IRcxvmWGnK7D0lGit54iZp3hLWTOLKMt0LJ-bMAvxk7HA5JB8ISPIi6rY2nYcjdguiZKTnez15FfAA7K3jyIahb64ZaBE76bWNOeVgbYwpOfVWl1QSoCY9NbVEcIYDUIuJA5lswlgyCeBKZ4vvSb5ZbzHlaF0ODC_IBQeZP-ZfZmtRdAUJdnoZDb0AJ3MDK1-odakMQoWlhoub3ePdJel6yyGVQrskoVTeFRIfpfeQqXG4zY3fDZFrUoF-0fa6ddckP-tSvlyjR5JsZant7SZc_w01Yw-7VJ1d7zf2xeuunLoug-Zg1sLZp9dYihApnmZuj4lPh61LnTcvC9pt5udq5wkAQIqO9GUxH4XdMN0_cTm49em6T_MlDi654D-ZxfstR1NNADmvaTQXGJOlYYpCcrrzSlu0003__mC0)
