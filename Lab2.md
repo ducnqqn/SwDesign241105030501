@@ -87,22 +87,51 @@ Ca sử dụng cho phép Quản trị viên tính lương tạo báo cáo tổng
 Ca sử dụng này cho phép Nhân viên tạo các báo cáo về số giờ làm việc, số giờ làm việc cho một dự án, ngày nghỉ phép/ngày nghỉ ốm, hoặc tổng lương tính đến hiện tại.
 
 ## 2. Xác định các lớp:
-- Boundary: Employee Interface, Report Interface.
-- Entity: Employee, Report, Project.
-- Control: Report Controller, Project Management Controller.
+- Boundary: EmployeeReportUI.
+- Entity: Employee, Report, ProjectDatabase, PayrollData.
+- Control: EmployeeReportController.
 
 ## 3. Biểu đồ Sequence:
-![](https://www.planttext.com/api/plantuml/png/R5DBRjim4Dtp50FjSm4lWY2sqNeHm502P3qcnmvRYbI6b06VhOiUgLVeaA9asOaN0Znwlta3_Vlpzoacv3HqJg5EWM7RzIvSYDGX3DuWNw2PHh3pYVY8cXh02DkTqi4d3WwQblh02TRZVqTS4ErQaKysBJH6vZmUUIDu7kuv_2ATu0KzdgYJCMmmuG7ZID-_R9uNyQhtRRXsfzIS--5HmgxWbPp8Hk2Ha2uz0Ne31XC1ep-Hskuok5rdi3SpLBCLSOkgNHUn5RIKsDAP8j3a8ZAeq4cIuus5ZT2yXOGEVeQ18xm7_aq6Zb8sGjsrKI2_KJslTpK0FADrU704VUr5Vo2V2FpG7OXZOMREb5oO0_llK3MzLB6niNTukGELJB6qP8Clb6iXSvknrdZ3bUEPsawxWX_aYKkhOm_vT0Q2_rBa8igfSambBMxHqkT0KUeC4F4ygKvTbv7DjoeeCdV1fUApDNAf0dH1OzwkNDvZHujc9FdhLR_OzQJjqKgeYLSM_JQQiL4ZcxjqLKlorVSrt-ougRJqCI-MBPxaaR_A_m000F__0m00)
+![](https://www.planttext.com/api/plantuml/png/b5N1Rjim3BthAuYUitr03aE1Ti1w6OPbmywCH2TQPIcZv0p-jXtsIVk5KOhj9avhExd4fiL7yZsI-lVdxtrCoAcfdKAT0iF7-k12IwIseV46kHqiN-aGE7r_KZhunC6DFZoSh8vOaKysjN2ozszVEFmadHunuHOZ3MPiirSsAzKZmhiFLs7NWlUhePWW1T1Cc0Zu565yzDhz9RcrH8onyvI_0gdUEZsTI0UIsWEjm9I4qEzefWmXucXDdxoKOXEnnHkhs90tLn0ANUfeBrc1ZN3tBIHqy2aq7E57u6SoK8dGs2jofq1-KmoCfCi49BPq971MQ0WLw3toZi0tzPOu5i2HqtGr0jYmduAxJQ576myEsocWrnqtv2JfIxzNuYzI9nOieViIJJwfoOOx6uapgZrfYZ4FfCcpSdPe4RN5QIhgoRQ6XulHwfff9a8vioDFBAxcncdgjUeYbXuUHEe6DEQXZtWSyffNycnRlEMuJ4jvhYpNFSffOInjoPSyYhiB6fCD7b3wmsDDCuLSxArkRom0cj9tCoBZ1eLpPAF8oJGFAPj04Nn8CoJFDS7da6pLzm0O6pMooS7oi0YyGDlTlYo7uOPwgafNvoNNU3oYTRXr1BBRh8zDLLbjvP9PAVH0p6Akym3jobQC-_3RhmfxQN-siRKSPYftOWQILqtkVKuZ5qbAtSjZlYt_0m00__y30000)
 
 ## 4. Nhiệm vụ của các lớp:
-- Employee Interface (Boundary): Giao diện người dùng, nhận yêu cầu từ nhân viên để chọn loại báo cáo và nhập thông tin về phạm vi thời gian, mã dự án (nếu có).
-- Report Controller (Control): Quản lý quy trình tạo báo cáo. Xử lý logic và điều phối các bước trong việc tạo báo cáo, lưu báo cáo và hủy bỏ báo cáo nếu cần thiết.
-- Project (Entity): Lưu trữ dữ liệu về các dự án và mã dự án, được truy vấn khi nhân viên cần báo cáo cho một dự án cụ thể.
-- Report (Entity): Lưu trữ dữ liệu của các báo cáo được tạo, bao gồm các loại báo cáo, thông tin thời gian, thông tin về dự án và các thông tin liên quan đến tổng số giờ làm việc, ngày nghỉ, tiền lương, v.v.
-- Employee (Entity): Đại diện cho nhân viên, bao gồm thông tin cá nhân và các báo cáo mà họ yêu cầu.
+- Employee (Actor):
+  - Là người dùng của hệ thống, chịu trách nhiệm yêu cầu tạo báo cáo, cung cấp thông tin cần thiết như loại báo cáo, khoảng thời gian, và mã charge number (nếu cần).
+  - Employee cũng có thể yêu cầu lưu báo cáo sau khi tạo.
+- EmployeeReportUI (Boundary):
+  - Đây là lớp giao diện người dùng, chịu trách nhiệm nhận yêu cầu và thông tin đầu vào từ Employee và hiển thị kết quả sau khi báo cáo được tạo.
+  - Nó chuyển thông tin và yêu cầu từ người dùng đến lớp điều khiển EmployeeReportController.
+- EmployeeReportController (Control):
+  - Lớp này điều khiển luồng hoạt động của ca sử dụng.
+  - Nó xử lý yêu cầu tạo báo cáo từ EmployeeReportUI, kiểm tra tính đầy đủ của dữ liệu, và tương tác với các lớp thực thể ProjectDatabase và PayrollData để lấy dữ liệu cần thiết.
+  - Sau đó, nó tạo một báo cáo thông qua lớp Report.
+- Report (Entity):
+  - Lớp này đại diện cho báo cáo được tạo ra.
+  - Nó chứa dữ liệu và logic cần thiết để lưu trữ và xử lý báo cáo.
+  - Report được dùng để lưu kết quả của việc tạo báo cáo và hỗ trợ chức năng lưu trữ.
+- ProjectDatabase (Entity):
+  - Lớp này lưu trữ và quản lý dữ liệu liên quan đến các dự án, bao gồm danh sách mã charge number.
+  - Nó cung cấp thông tin về dự án khi EmployeeReportController yêu cầu, đặc biệt là khi cần tạo báo cáo liên quan đến một dự án cụ thể.
+- PayrollData (Entity):
+  - Lớp này lưu trữ dữ liệu về giờ làm việc và thông tin lương của nhân viên.
+  - Nó cung cấp dữ liệu cần thiết cho EmployeeReportController để tạo báo cáo.
+
 ## 5. Quan hệ giữa các lớp:
+- Tương tác chính: Employee tương tác với EmployeeReportUI.
+- Điều khiển: EmployeeReportUI và EmployeeReportController giao tiếp với nhau để xử lý yêu cầu.
+- Truy vấn dữ liệu: EmployeeReportController tương tác với ProjectDatabase và PayrollData để lấy dữ liệu cần thiết.
+- Tạo thực thể: EmployeeReportController tạo và lưu trữ các báo cáo thông qua lớp Report.
+  
 ## 6. Biểu đồ lớp:
+![](https://www.planttext.com/api/plantuml/png/f5H1JiCm4Bpx5JusKYlk4Qeg5H2LAeHI46StMRK1npPh9oX2l8m3J-8BE77gD0uj1tA8bDdrx6Hsak_FhuKs34rPS99ofZMzBXINDG1z9zHUCmeTiCfYkZ6OYrrN4Ao00KGfmci9sYIW99f9H3v8mEegZwkEdT8irugpUYLKQMua5lQGA-YzVFCy0_ODgs0jKsPoAKxFM4fXK78Ew6Sfb2bexUg98_Fa5UDvnWoqIZoQ8bWiqA6jW0xYdOw33qToN8Ut4Tl7Xrf1O6Fh_vMT4jFcVd1TP2FCKLY01RRlG03-hlESmdkKpv2sX5kc-ush7e_fEjVcqXsT-t5ckMUuWxkos0BgIHIqzHDOtUoWOUhP7PP0AZ7JfmOyINovbQKb7-Tl6des7TeLZUmnLaWZubzazgtynp6RpKUP9gEGZxlwL9AJSMrEEV1yJxY-s0R4AeKAWktyGNEqevx2-tzni2uYNQBFlPLZA57uA9A5jRFvlVm0003__mC0)
+
 ## 7. Giải thích biểu đồ lớp:
+- Employee: Đại diện cho người dùng hệ thống. Nhân viên có thể yêu cầu tạo báo cáo thông qua phương thức requestReport().
+- EmployeeReportUI: Giao diện người dùng hiển thị các biểu mẫu nhập thông tin và báo cáo kết quả. Nó có các phương thức để nhận thông tin và hiển thị báo cáo.
+- EmployeeReportController: Điều khiển luồng xử lý yêu cầu tạo báo cáo, bao gồm kiểm tra đầu vào, tạo báo cáo và xử lý lưu trữ.
+- Report: Thực thể lưu trữ dữ liệu báo cáo. Lớp này có các phương thức để tạo và lưu báo cáo.
+- ProjectDatabase: Lưu trữ dữ liệu về các dự án và cung cấp danh sách mã charge number khi cần.
+- PayrollData: Lưu trữ thông tin về giờ làm việc và lương của nhân viên, hỗ trợ truy xuất dữ liệu để tạo báo cáo.
 
 # Phân tích ca sử dụng Maintain Employee Information
 ## 1. Mô tả:
