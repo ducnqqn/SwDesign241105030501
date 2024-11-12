@@ -43,42 +43,41 @@ Ca sử dụng cho phép Quản trị viên tính lương tạo báo cáo tổng
 ![](https://www.planttext.com/api/plantuml/png/V9BFIiGm4CRlUOeSzT0NABBiuWeMHCG_U1usun9CapgP2aLyCWy-agzWiarYkrLx2FIRcTzycSdNn-VQCn3thH5YPy1xkL6jjjep0UjNlCNE4Jyqyat8mqVuqgFdKJyvJQhIlZCm7AaUCY18xxd1g9mxo-ICGIhe7I4m_iUOMTWefLax2wQnJsxP8N6ha1z_xuSEQtd7fEq-1GvNtuQUjOndKj6gfTPsnWs8rz2Yh-LLcC_PY5ebKtkqI5FxnSr5gYr-CgnHHtvieC-aYELSlqK6RVmKVGD3d64m2cMAeUBHqVEbwycNaGKnvCu8V-ovgbQB3Od5odwoVezDZ8cfoHZBzn5Y7KOTNzut0000__y30000)
 
 ## 7. Giải thích biểu đồ lớp:
-- PayrollAdministrator (Actor)
- - Vai trò: Là tác nhân bên ngoài hệ thống, không có thuộc tính hay phương thức cụ thể vì đây chỉ là người dùng sử dụng hệ thống để yêu cầu báo cáo.
- - Tương tác: Tác nhân này chỉ tương tác với lớp AdministrativeReportUI.
+- PayrollAdministrator (Actor):
+  - Vai trò: Là tác nhân bên ngoài hệ thống, không có thuộc tính hay phương thức cụ thể vì đây chỉ là người dùng sử dụng hệ thống để yêu cầu báo cáo.
+  - Tương tác: Tác nhân này chỉ tương tác với lớp AdministrativeReportUI.
 - AdministrativeReportUI (Boundary)
- - Thuộc tính: Không có thuộc tính cụ thể vì đây là lớp giao diện chịu trách nhiệm nhận thông tin từ người dùng.
- - Phương thức:
-  - requestReport(): Phương thức để nhận yêu cầu tạo báo cáo từ người dùng.
-  - displayReport(): Phương thức để hiển thị báo cáo sau khi được tạo.
-  - saveReport(): Phương thức để lưu báo cáo sau khi tạo nếu người dùng yêu cầu.
- - Giải thích: Lớp này là trung gian giữa người dùng và lớp điều khiển ReportController, nhận thông tin đầu vào và gửi yêu cầu xử lý.
+  - Thuộc tính: Không có thuộc tính cụ thể vì đây là lớp giao diện chịu trách nhiệm nhận thông tin từ người dùng.
+  - Phương thức:
+    - requestReport(): Phương thức để nhận yêu cầu tạo báo cáo từ người dùng.
+    - displayReport(): Phương thức để hiển thị báo cáo sau khi được tạo.
+    - saveReport(): Phương thức để lưu báo cáo sau khi tạo nếu người dùng yêu cầu.
+  - Giải thích: Lớp này là trung gian giữa người dùng và lớp điều khiển ReportController, nhận thông tin đầu vào và gửi yêu cầu xử lý.
 - ReportController (Control)
- - Thuộc tính: Không có thuộc tính cụ thể vì lớp này tập trung vào xử lý logic.
- - Phương thức:
-  - createReport(): Phương thức để xử lý logic tạo báo cáo từ các thông tin được cung cấp.
-  - saveReport(): Phương thức để lưu báo cáo sau khi tạo nếu được yêu cầu.
-  - requestAdditionalInfo(): Phương thức để yêu cầu thêm thông tin nếu thông tin đầu vào chưa đủ.
- - Giải thích: Đây là lớp điều khiển, đảm bảo luồng xử lý đúng khi tạo báo cáo, tương tác với cả lớp giao diện và lớp thực thể để hoàn thành quy trình.
+  - Thuộc tính: Không có thuộc tính cụ thể vì lớp này tập trung vào xử lý logic.
+  - Phương thức:
+    - createReport(): Phương thức để xử lý logic tạo báo cáo từ các thông tin được cung cấp.
+    - saveReport(): Phương thức để lưu báo cáo sau khi tạo nếu được yêu cầu.
+    - requestAdditionalInfo(): Phương thức để yêu cầu thêm thông tin nếu thông tin đầu vào chưa đủ.
+  - Giải thích: Đây là lớp điều khiển, đảm bảo luồng xử lý đúng khi tạo báo cáo, tương tác với cả lớp giao diện và lớp thực thể để hoàn thành quy trình.
 - Report (Entity)
- - Thuộc tính:
-  - reportType: String: Loại báo cáo (ví dụ: tổng số giờ làm việc hoặc lương theo năm).
-  - startDate: Date: Ngày bắt đầu của phạm vi báo cáo.
-  - endDate: Date: Ngày kết thúc của phạm vi báo cáo.
-  - employeeNames: List<String>: Danh sách tên nhân viên được đưa vào báo cáo.
- - Phương thức:
-  - generateReport(): Phương thức để tạo ra báo cáo với thông tin được cung cấp.
- - Giải thích: Lớp này đại diện cho báo cáo được tạo ra và lưu giữ thông tin về nó.
+  - Thuộc tính:
+    - reportType: String: Loại báo cáo (ví dụ: tổng số giờ làm việc hoặc lương theo năm).
+    - startDate: Date: Ngày bắt đầu của phạm vi báo cáo.
+    - endDate: Date: Ngày kết thúc của phạm vi báo cáo.
+    - employeeNames: List<String>: Danh sách tên nhân viên được đưa vào báo cáo.
+  - Phương thức:
+    - generateReport(): Phương thức để tạo ra báo cáo với thông tin được cung cấp.
 - Employee (Entity)
- - Thuộc tính:
-  - employeeId: String: Mã định danh duy nhất của nhân viên.
-  - name: String: Tên nhân viên.
- - Phương thức:
-  - getEmployeeDetails(): Phương thức để truy xuất thông tin chi tiết của nhân viên.
- - Giải thích: Lớp này chứa thông tin chi tiết về nhân viên, có thể được truy vấn khi tạo báo cáo.
+  - Thuộc tính:
+    - employeeId: String: Mã định danh duy nhất của nhân viên.
+    - name: String: Tên nhân viên.
+  - Phương thức:
+    - getEmployeeDetails(): Phương thức để truy xuất thông tin chi tiết của nhân viên.
+  - Giải thích: Lớp này chứa thông tin chi tiết về nhân viên, có thể được truy vấn khi tạo báo cáo.
 - PayrollData (Entity)
- - Thuộc tính: Không có thuộc tính cụ thể, vì lớp này đại diện cho việc quản lý dữ liệu lương.
- - Phương thức:
-  - getWorkHours(): Phương thức để lấy thông tin về số giờ làm việc của nhân viên.
-  - getPayDetails(): Phương thức để lấy thông tin chi tiết về tiền lương của nhân viên.
- - Giải thích: Lớp này cung cấp dữ liệu cần thiết từ bảng lương và thời gian làm việc, phục vụ cho việc tạo báo cáo.
+  - Thuộc tính: Không có thuộc tính cụ thể, vì lớp này đại diện cho việc quản lý dữ liệu lương.
+  - Phương thức:
+    - getWorkHours(): Phương thức để lấy thông tin về số giờ làm việc của nhân viên.
+    - getPayDetails(): Phương thức để lấy thông tin chi tiết về tiền lương của nhân viên.
+  - Giải thích: Lớp này cung cấp dữ liệu cần thiết từ bảng lương và thời gian làm việc, phục vụ cho việc tạo báo cáo.
