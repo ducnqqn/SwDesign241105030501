@@ -271,3 +271,144 @@ Ca sử dụng này cho phép Nhân viên chọn phương thức thanh toán, ba
 - BankAccount: Lưu trữ thông tin tài khoản ngân hàng nếu phương thức thanh toán là chuyển khoản ngân hàng (Direct Deposit).
 
 # Code java mô phỏng ca sử dụng Maintain Timecard.
+## Các lớp có trong code mô phỏng: 
+- Timecard Class: Đại diện cho thẻ chấm công của nhân viên. Bao gồm các phương thức để thêm giờ làm, kiểm tra tính hợp lệ của giờ làm và nộp thẻ chấm công.
+- Employee Class: Đại diện cho nhân viên, có thể tạo thẻ chấm công, thêm giờ làm và nộp thẻ chấm công.
+- TimecardSystem: Nơi mô phỏng các bước trong ca sử dụng.
+
+## Các bước thực hiện: 
+1. Nhân viên tạo thẻ chấm công cho một kỳ lương.
+2. Nhân viên thêm giờ làm cho các dự án khác nhau.
+3. Nhân viên nộp thẻ chấm công và không thể chỉnh sửa sau khi nộp.
+4. Hệ thống kiểm tra tính hợp lệ của các giờ làm và ngừng cho phép chỉnh sửa sau khi đã nộp thẻ.
+
+## Code của từng lớp: 
+- Timecard Class:
+```
+  class Timecard {
+    private Date startDate;
+    private Date endDate;
+    private Map<String, Integer> hoursWorked = new HashMap<>();
+    private boolean isSubmitted = false;
+
+    public Timecard(Date startDate, Date endDate) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void addHours(String chargeNumber, int hours) throws IllegalArgumentException {
+        if (isSubmitted) {
+            throw new IllegalStateException("Timecard already submitted, cannot add hours.");
+        }
+        if (hours > 24) {
+            throw new IllegalArgumentException("Invalid number of hours for a single day.");
+        }
+        if (hoursWorked.containsKey(chargeNumber)) {
+            hoursWorked.put(chargeNumber, hoursWorked.get(chargeNumber) + hours);
+        } else {
+            hoursWorked.put(chargeNumber, hours);
+        }
+    }
+
+    public void submitTimecard() throws IllegalStateException {
+        if (isSubmitted) {
+            throw new IllegalStateException("Timecard is already submitted.");
+        }
+        this.isSubmitted = true;
+        System.out.println("Timecard submitted on: " + new Date());
+    }
+
+    public Map<String, Integer> getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public boolean isSubmitted() {
+        return isSubmitted;
+    }
+
+    @Override
+    public String toString() {
+        return "Timecard from " + startDate + " to " + endDate + ", Hours: " + hoursWorked;
+    }
+}
+```
+
+- Employee Class:
+```
+class Employee {
+    private String name;
+    private Timecard currentTimecard;
+    private static final int MAX_HOURS_PER_DAY = 8;
+
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public void createTimecard(Date startDate, Date endDate) {
+        this.currentTimecard = new Timecard(startDate, endDate);
+        System.out.println("Timecard created for " + name + ": " + currentTimecard);
+    }
+
+    public void addHours(String chargeNumber, int hours) {
+        try {
+            currentTimecard.addHours(chargeNumber, hours);
+            System.out.println("Added " + hours + " hours for " + chargeNumber);
+        } catch (IllegalArgumentException | IllegalStateException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public void submitTimecard() {
+        try {
+            currentTimecard.submitTimecard();
+            System.out.println("Timecard successfully submitted.");
+        } catch (IllegalStateException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public Timecard getCurrentTimecard() {
+        return currentTimecard;
+    }
+
+}
+```
+
+- TimecardSystem (chứa hàm main):
+```
+public class TimecardSystem {
+    public static void main(String[] args) {
+        // Mô phỏng hệ thống
+        Employee employee = new Employee("John Doe");
+
+        // Bước 1: Tạo bảng chấm công cho kỳ trả lương hiện tại
+        Date startDate = new GregorianCalendar(2024, Calendar.NOVEMBER, 1).getTime();
+        Date endDate = new GregorianCalendar(2024, Calendar.NOVEMBER, 7).getTime();
+        employee.createTimecard(startDate, endDate);
+
+        // Bước 2: Thêm số giờ làm việc cho các mã chi phí khác nhau
+        employee.addHours("Project A", 5);
+        employee.addHours("Project B", 7);
+        employee.addHours("Project C", 3);
+
+        // Bước 3: Cố gắng gửi bảng chấm công
+        employee.submitTimecard();
+
+        // Bước 4: Thử sửa đổi sau khi đã gửi (nên thất bại)
+        employee.addHours("Project A", 2); // Điều này sẽ thất bại vì bảng chấm công đã được gửi.
+
+        // Hiển thị trạng thái cuối cùng
+        System.out.println(employee.getCurrentTimecard());
+    }
+}
+```
+## Kết quả mô phỏng: 
+![image](https://github.com/user-attachments/assets/5806011a-9c6d-4abc-a2a8-680159e7daa8)
