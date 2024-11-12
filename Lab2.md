@@ -218,13 +218,56 @@ Ca sử dụng này mô tả cách thức thực hiện bảng lương vào mỗ
 - BankTransaction: Lớp này đại diện cho giao dịch ngân hàng khi thanh toán bằng chuyển khoản.
 - BankSystem: Lớp này giao tiếp với hệ thống ngân hàng để thực hiện giao dịch chuyển khoản.
 
-# Phân tích biểu đồ Select Payment Method
+# Phân tích ca sử dụng Select Payment Method
 ## 1. Mô tả:
+Ca sử dụng này cho phép Nhân viên chọn phương thức thanh toán, bao gồm nhận séc trực tiếp, nhận qua bưu điện hoặc chuyển khoản trực tiếp vào tài khoản ngân hàng đã chỉ định.
+
 ## 2. Xác định các lớp:
+- Boundary: PaymentMethodUI.
+- Control: PaymentMethodController.
+- Entity: Employee, PaymentMethod, Address, BankAccount.
+  
 ## 3. Biểu đồ Sequence:
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/b9H1Ri8m44NtFiKe-rw0HLLQkc0HAMh50Tnu41QExTeJ46VheaVg5Mex1f8qf2sB29F_P-PDVlZw-7pmn1srZMAy9kDW6Q-CsV2ZhANbcg2e-Ab1JINIpeZDkW3kOREUqJmPJSueXIvfhyUXvxcnofmGaoWSPYecILKE5KiX77gVxiNlmxkFNE-NTMrQJKcHpumbHBYx3momWBMM93cX1zirX2Pr18yAQv96iw0BwYj5SBtWUukURdjwwk0DSCb4Jk810JCuIBqrhk794JNZDfKp1obw1i69ZsedYfNqLl7JPHvZOqq_DVfvwtdOCJVZAYvVrdjeRP55A1Y4px1nLOPgh_XZ2MIWiDdFK7c4ekHIpTPA4EUbykwv9ja4m7afVTcmMWn3dksokTlgEOuc3fuXLjA5yM65rdX9VyTv2y43WHHA_SgKj34L4qLpWCTWoSAxeF-JJdH48XCnr68ok1iRSjTBuL7I3ZGUnz7fmBhtQn7ds4hNt7v7s4De6FzwlW400F__0m00)
+
 ## 4. Nhiệm vụ của các lớp:
+- PaymentMethodUI:
+  - Hiển thị giao diện người dùng cho Actor để lựa chọn phương thức thanh toán.
+  - Yêu cầu Actor cung cấp thông tin cần thiết (địa chỉ hoặc thông tin ngân hàng) nếu cần thiết.
+  - Truyền các lựa chọn và thông tin từ Actor tới PaymentMethodController để xử lý.
+- PaymentMethodController:
+  - Điều khiển toàn bộ quy trình lựa chọn phương thức thanh toán.
+  - Nhận dữ liệu từ PaymentMethodUI và quyết định hành động cần thực hiện (lưu thông tin, cập nhật phương thức thanh toán, v.v.).
+  - Quản lý các logic liên quan đến phương thức thanh toán (chẳng hạn như yêu cầu thông tin bổ sung như địa chỉ hoặc thông tin ngân hàng).
+  - Cập nhật thông tin phương thức thanh toán trong lớp Employee sau khi quá trình lựa chọn hoàn tất.
+- Employee:
+  - Lưu trữ thông tin nhân viên, bao gồm phương thức thanh toán của nhân viên.
+  - Được cập nhật khi phương thức thanh toán của nhân viên thay đổi (do lựa chọn của Actor).
+- PaymentMethod:
+  - Lưu trữ thông tin về phương thức thanh toán của nhân viên (ví dụ: "pick up", "mail", hoặc "direct deposit").
+  - Được cập nhật bởi PaymentMethodController dựa trên lựa chọn của Actor.
+- Address:
+  - Lưu trữ thông tin địa chỉ của nhân viên nếu họ chọn phương thức thanh toán qua bưu điện (Mail).
+  - Được PaymentMethodController cập nhật khi Actor cung cấp địa chỉ cho phương thức "Mail".
+- BankAccount:
+  - Lưu trữ thông tin tài khoản ngân hàng của nhân viên nếu họ chọn phương thức thanh toán qua chuyển khoản ngân hàng (Direct Deposit).
+  - Được PaymentMethodController cập nhật khi Actor cung cấp thông tin ngân hàng.
+
 ## 5. Quan hệ giữa các lớp:
+- Actor tương tác trực tiếp với PaymentMethodUI để lựa chọn phương thức thanh toán.
+- PaymentMethodUI chuyển yêu cầu từ Actor sang PaymentMethodController để xử lý và cập nhật thông tin.
+- PaymentMethodController cập nhật thông tin trong Employee, PaymentMethod, Address, và BankAccount dựa trên lựa chọn của Actor.
+- Các lớp PaymentMethod, Address, và BankAccount chứa thông tin về phương thức thanh toán, địa chỉ gửi thư, và tài khoản ngân hàng của Employee.
+
 ## 6. Biểu đồ lớp:
+![Class Diagram](https://www.planttext.com/api/plantuml/png/V9D1ReCm44NtFeMLLRl81LXKeL4NB9fKQdk02PwcACPsxQ4IgdAoBdgaNg4GmDYGuXMU_tbZVuRVxv-D8x1KbP8n0_a9ZiXNJr2NgEWHwLsB5VzYl5cv1ETu9FLAjyfBwQKscF1dieKwNiGpEmVaXz98NIF6qA4QyR0lPYBYTKj1YLVA9ZnT4Xysi84G5frBUDez1D81r2dDSrqfIlZzk1dlSYM7ryoVN1JEIAWZUM-eqChTtFOUYnyLEcgQ5wq0CbDlkb6lmxTQaTLIelLDAYE0C79vk8FFcUB1_Nqzo955f4cGUK7rf6HqCoLogyKOkcS68NakTFjTLHxGJbXjmhlmypMaD2Tj-NfzDysLJNEUUSPus7-njUyC8xPeYkTboJaCpf8dd1u_uVCsaJHmes88OXjKelrR_m000F__0m00)
+
 ## 7. Giải thích biểu đồ lớp:
+- PaymentMethod: Chứa thông tin về phương thức thanh toán của nhân viên (chẳng hạn như "pick up", "mail", hoặc "direct deposit").
+- Employee: Chứa thông tin của nhân viên, bao gồm ID nhân viên, tên, phương thức thanh toán (PaymentMethod), địa chỉ (Address), và thông tin tài khoản ngân hàng (BankAccount).
+- PaymentMethodUI: Cung cấp giao diện người dùng cho Actor để lựa chọn phương thức thanh toán. Giao diện sẽ yêu cầu Actor cung cấp thông tin bổ sung (nếu cần).
+- PaymentMethodController: Điều khiển quá trình thay đổi phương thức thanh toán cho nhân viên. Cập nhật và lưu thông tin về phương thức thanh toán, địa chỉ, và tài khoản ngân hàng của nhân viên.
+- Address: Lưu trữ địa chỉ gửi thư cho phương thức thanh toán qua bưu điện (Mail).
+- BankAccount: Lưu trữ thông tin tài khoản ngân hàng nếu phương thức thanh toán là chuyển khoản ngân hàng (Direct Deposit).
 
 # Code java mô phỏng ca sử dụng Maintain Timecard.
