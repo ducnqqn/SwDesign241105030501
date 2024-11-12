@@ -81,3 +81,54 @@ Ca sử dụng cho phép Quản trị viên tính lương tạo báo cáo tổng
     - getWorkHours(): Phương thức để lấy thông tin về số giờ làm việc của nhân viên.
     - getPayDetails(): Phương thức để lấy thông tin chi tiết về tiền lương của nhân viên.
   - Giải thích: Lớp này cung cấp dữ liệu cần thiết từ bảng lương và thời gian làm việc, phục vụ cho việc tạo báo cáo.
+
+# Phân tích ca sử dụng Create Employee Report
+## 1. Mô tả:
+Ca sử dụng này cho phép Nhân viên tạo các báo cáo về số giờ làm việc, số giờ làm việc cho một dự án, ngày nghỉ phép/ngày nghỉ ốm, hoặc tổng lương tính đến hiện tại.
+
+## 2. Xác định các lớp:
+- Boundary: Employee Interface, Report Interface.
+- Entity: Employee, Report, Project.
+- Control: Report Controller, Project Management Controller.
+
+## 3. Biểu đồ Sequence:
+![](https://www.planttext.com/api/plantuml/png/R5DBRjim4Dtp50FjSm4lWY2sqNeHm502P3qcnmvRYbI6b06VhOiUgLVeaA9asOaN0Znwlta3_Vlpzoacv3HqJg5EWM7RzIvSYDGX3DuWNw2PHh3pYVY8cXh02DkTqi4d3WwQblh02TRZVqTS4ErQaKysBJH6vZmUUIDu7kuv_2ATu0KzdgYJCMmmuG7ZID-_R9uNyQhtRRXsfzIS--5HmgxWbPp8Hk2Ha2uz0Ne31XC1ep-Hskuok5rdi3SpLBCLSOkgNHUn5RIKsDAP8j3a8ZAeq4cIuus5ZT2yXOGEVeQ18xm7_aq6Zb8sGjsrKI2_KJslTpK0FADrU704VUr5Vo2V2FpG7OXZOMREb5oO0_llK3MzLB6niNTukGELJB6qP8Clb6iXSvknrdZ3bUEPsawxWX_aYKkhOm_vT0Q2_rBa8igfSambBMxHqkT0KUeC4F4ygKvTbv7DjoeeCdV1fUApDNAf0dH1OzwkNDvZHujc9FdhLR_OzQJjqKgeYLSM_JQQiL4ZcxjqLKlorVSrt-ougRJqCI-MBPxaaR_A_m000F__0m00)
+
+## 4. Nhiệm vụ của các lớp:
+- Employee Interface (Boundary): Giao diện người dùng, nhận yêu cầu từ nhân viên để chọn loại báo cáo và nhập thông tin về phạm vi thời gian, mã dự án (nếu có).
+- Report Controller (Control): Quản lý quy trình tạo báo cáo. Xử lý logic và điều phối các bước trong việc tạo báo cáo, lưu báo cáo và hủy bỏ báo cáo nếu cần thiết.
+- Project (Entity): Lưu trữ dữ liệu về các dự án và mã dự án, được truy vấn khi nhân viên cần báo cáo cho một dự án cụ thể.
+- Report (Entity): Lưu trữ dữ liệu của các báo cáo được tạo, bao gồm các loại báo cáo, thông tin thời gian, thông tin về dự án và các thông tin liên quan đến tổng số giờ làm việc, ngày nghỉ, tiền lương, v.v.
+- Employee (Entity): Đại diện cho nhân viên, bao gồm thông tin cá nhân và các báo cáo mà họ yêu cầu.
+## 5. Quan hệ giữa các lớp:
+## 6. Biểu đồ lớp:
+## 7. Giải thích biểu đồ lớp:
+
+# Phân tích ca sử dụng Maintain Employee Information
+## 1. Mô tả:
+## 2. Xác định các lớp:
+## 3. Biểu đồ Sequence:
+## 4. Nhiệm vụ của các lớp:
+## 5. Quan hệ giữa các lớp:
+## 6. Biểu đồ lớp:
+## 7. Giải thích biểu đồ lớp:
+
+# Phân tích ca sử dụng Run Payroll
+## 1. Mô tả:
+## 2. Xác định các lớp:
+## 3. Biểu đồ Sequence:
+## 4. Nhiệm vụ của các lớp:
+## 5. Quan hệ giữa các lớp:
+## 6. Biểu đồ lớp:
+## 7. Giải thích biểu đồ lớp:
+
+# Phân tích biểu đồ Select Payment Method
+## 1. Mô tả:
+## 2. Xác định các lớp:
+## 3. Biểu đồ Sequence:
+## 4. Nhiệm vụ của các lớp:
+## 5. Quan hệ giữa các lớp:
+## 6. Biểu đồ lớp:
+## 7. Giải thích biểu đồ lớp:
+
+# Code java mô phỏng ca sử dụng Maintain Timecard.
