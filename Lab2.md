@@ -11,9 +11,6 @@ Ca sử dụng cho phép Quản trị viên tính lương tạo báo cáo tổng
 ![](https://www.planttext.com/api/plantuml/png/f5LBRjmm3Dth53p0f0UOHP4WwM8MBO86FG1ZqGu1MN8ase3FraMFr2kKygUUfbQHcSx65aTyV8zwb7z-_t6R1AFqhJDOIOZmY6CCpjtPbZqdYQX1ynnwRp6ES1RcWRvI5w9yEvagUD4ic0FtyyfHDEI5PLpYw-fJsxam4gthfUG32XgpLnzkFXOg7nNwjQSa806gI2W4SIwsdv2Xth8yAeEKbZnzJ83cxQxta5WWPEpe07OYWxxHTreaWyUMqiKY7sCOsAxIL2WBHSQBD3wHjty167G29r-7s2f4y505PKf21lItruApmygw9J8DAeigIYaxnEPJpCbd6_S9QN8V_PQmLssE7U7-ZwFTTfUGf_yQygIT8Lk4B_NxWLFdS5phaKi4dpabzWtmrgsBSLUVj0MiQtrHmhlO7tsNNMitWsZmlsOouN3LHEfxpR5TyyiZkSTjOp2bkr3DvaPLc0UmA6ZdPbWwN03wbsUVpgI_mwsvWfq7SihquVTTT8M3lmJXUZKmM4uLHgiuqtagj3BZvaKWrFit_gcU1XCuGUznG7Rux0YqJUm7T6mF1ZrGZ1ffy-WtbFVQUN387gOUoKkXrvKcHve-FJ0lAt8VChkicuovrTVyKVe5003__mC0)
 
 ## 4. Nhiệm vụ của các lớp:
-- PayrollAdministrator (Actor):
-  - Là người dùng hệ thống, chịu trách nhiệm yêu cầu tạo và lưu trữ báo cáo hành chính.
-  - Cung cấp các thông tin cần thiết như loại báo cáo, phạm vi ngày và tên nhân viên.
 - AdministrativeReportUI (Boundary):
   - Đây là lớp giao diện người dùng, có nhiệm vụ hiển thị giao diện để Payroll Administrator nhập thông tin cần thiết và yêu cầu tạo báo cáo.
   - Nó gửi yêu cầu và dữ liệu đầu vào từ người dùng đến lớp điều khiển (ReportController).
@@ -95,9 +92,6 @@ Ca sử dụng này cho phép Nhân viên tạo các báo cáo về số giờ l
 ![](https://www.planttext.com/api/plantuml/png/b5N1Rjim3BthAuYUitr03aE1Ti1w6OPbmywCH2TQPIcZv0p-jXtsIVk5KOhj9avhExd4fiL7yZsI-lVdxtrCoAcfdKAT0iF7-k12IwIseV46kHqiN-aGE7r_KZhunC6DFZoSh8vOaKysjN2ozszVEFmadHunuHOZ3MPiirSsAzKZmhiFLs7NWlUhePWW1T1Cc0Zu565yzDhz9RcrH8onyvI_0gdUEZsTI0UIsWEjm9I4qEzefWmXucXDdxoKOXEnnHkhs90tLn0ANUfeBrc1ZN3tBIHqy2aq7E57u6SoK8dGs2jofq1-KmoCfCi49BPq971MQ0WLw3toZi0tzPOu5i2HqtGr0jYmduAxJQ576myEsocWrnqtv2JfIxzNuYzI9nOieViIJJwfoOOx6uapgZrfYZ4FfCcpSdPe4RN5QIhgoRQ6XulHwfff9a8vioDFBAxcncdgjUeYbXuUHEe6DEQXZtWSyffNycnRlEMuJ4jvhYpNFSffOInjoPSyYhiB6fCD7b3wmsDDCuLSxArkRom0cj9tCoBZ1eLpPAF8oJGFAPj04Nn8CoJFDS7da6pLzm0O6pMooS7oi0YyGDlTlYo7uOPwgafNvoNNU3oYTRXr1BBRh8zDLLbjvP9PAVH0p6Akym3jobQC-_3RhmfxQN-siRKSPYftOWQILqtkVKuZ5qbAtSjZlYt_0m00__y30000)
 
 ## 4. Nhiệm vụ của các lớp:
-- Employee (Actor):
-  - Là người dùng của hệ thống, chịu trách nhiệm yêu cầu tạo báo cáo, cung cấp thông tin cần thiết như loại báo cáo, khoảng thời gian, và mã charge number (nếu cần).
-  - Employee cũng có thể yêu cầu lưu báo cáo sau khi tạo.
 - EmployeeReportUI (Boundary):
   - Đây là lớp giao diện người dùng, chịu trách nhiệm nhận yêu cầu và thông tin đầu vào từ Employee và hiển thị kết quả sau khi báo cáo được tạo.
   - Nó chuyển thông tin và yêu cầu từ người dùng đến lớp điều khiển EmployeeReportController.
@@ -135,12 +129,43 @@ Ca sử dụng này cho phép Nhân viên tạo các báo cáo về số giờ l
 
 # Phân tích ca sử dụng Maintain Employee Information
 ## 1. Mô tả:
+Ca sử dụng này cho phép Quản trị viên Bảng lương duy trì, thêm, thay đổi và xóa thông tin nhân viên khỏi hệ thống.
+
 ## 2. Xác định các lớp:
+- Boundary: PayrollAdminUI.
+- Control: EmployeeController.
+- Entity: Employee, EmployeeDatabase.
+  
 ## 3. Biểu đồ Sequence:
+![](https://www.planttext.com/api/plantuml/png/x5PBRjim4Dtp5BDi5ctsNWG9uYoo260ao076uiXc8v4gEKghitNH8_KA7LgMhOyTIt6GLGLOC2ND6yvxRqZ-_VtdEZ1wBlDCOSBEmm8hxxBiHkV6ci0UvQ5Qkj9gz5NdxVEzIfnb6SDTNcIk8hgjnnbvHPODLxit_V4S6PSOIAb32U7hLI_L31xfHqc1WHtaQ2pB3sYB1iQcJdKZ-XWDzWmMtkK5Gofvf6RZB7ovqVhokT38T3cdZ9WkHi_hIRvFk452gw7mxjLe0aqooIoe0nCR4XQ19BO5quGFlsqZD4H6WjWRUYMGUUPEcxJQyoELeLAOCKYbWhxN1UGwdE6O09P-zeYF66FfMcp9EOroWgaEmAQ-uwKqJsTmwqb4xWQxvNTHS4Judkl8OWT3NAaRIxU1cf1ZfSZ_rFWSK6iJbP-Wnzo48iCAGfaa50BaSiDLx3HTIrqR-aorTnNUpoVfV6TPWD-AFg5lFtHo6mpTDLOKWIXzVtMPBanIUY_BtlGUUS0NWcIDTaKXEkkiFYatBj2dYXWIkRNFBhcdn7dzBdVNS_X8RzUhz7zlVxQtMtkdZXB4pIgfLSRT-ZMMnyOU3T9K6WU9n_BuWFvbJq6xc7VP-s3m6GQtJgpjpMhDuDAZdHca8zFDsKDEGhoEczelXg9E1BwqtvIw5hnujli7003__mC0)
+
 ## 4. Nhiệm vụ của các lớp:
+- PayrollAdminUI:
+  - Đây là lớp giao diện người dùng, hiển thị các biểu mẫu và thông báo, nhận dữ liệu đầu vào từ Payroll Administrator và chuyển tiếp dữ liệu này đến EmployeeController.
+- EmployeeController:
+  - Lớp điều khiển xử lý các yêu cầu từ PayrollAdminUI, đảm bảo luồng công việc đúng và tương tác với lớp Employee và EmployeeDatabase để thêm, cập nhật hoặc xóa nhân viên.
+- Employee:
+  - Đại diện cho một thực thể nhân viên trong hệ thống, chứa các thuộc tính và thông tin liên quan đến nhân viên.
+  - Được sử dụng trong quá trình thêm hoặc cập nhật thông tin nhân viên.
+- EmployeeDatabase:
+  - Lớp này chịu trách nhiệm lưu trữ và quản lý dữ liệu nhân viên trong hệ thống.
+  - Nó thực hiện các thao tác như thêm, cập nhật, và xóa thông tin nhân viên, và trả về thông tin nhân viên khi được yêu cầu.
+
 ## 5. Quan hệ giữa các lớp:
+- PayrollAdministrator là actor, tương tác với PayrollAdminUI (lớp giao diện người dùng).
+- PayrollAdminUI chuyển tiếp các yêu cầu đến EmployeeController để xử lý logic.
+- EmployeeController điều phối các thao tác và sử dụng Employee để xử lý dữ liệu nhân viên.
+- EmployeeDatabase là nơi lưu trữ dữ liệu nhân viên và hỗ trợ các thao tác với Employee.
+
 ## 6. Biểu đồ lớp:
+![](https://www.planttext.com/api/plantuml/png/Z5NRRjim37ttL-Yn0nRatGz5kte52hJ3q2mVe4XCB4mNWvIp6SE-R0_xfFt2A2_EnRAR2KY0a8T797N8_Fdr-uwYnDWwMnI2ZxAII7oM7GPhxxKptb146GEA7psWFmtWDg2xLz44V_Ek5FjWTE_-sN_FKAsVpacqeSRAxgDhREW07fdmWge_L8Tl0wA2A8sb7AI2tnfq5LZ84Zgoh5gbWEY5Ft87CpSX1fn2P6KDEJq47rDzSD4VgVK0kD4oolA8h_XNTdNRC0YE4KQNOXNH-DtxWqjNrqbqgdwA94CYi1tsCzZ1UgXxekQpIXTmi3qTAKu-BntarY7YIzTCUBbpoFtF7HIKaNO5gaKJkq-jsm3cg2Y_Lw3RNfTCKeLsO-7a3h46V0lGrC7377aTMhJTAxz77aZIIknokmhE6IA-RJekSJuRPsBc4Zlmm9F7hKrI72KZ22AFbgf1VMNTcprWzmAn3cFmh7AJY3QIO4wtmpkT575Dj_yHCH9fhfuiOclyCQSF7VVYJR4MavjhiRWTxQ5Ih0ce62sdXCi7cwy3hqcqn4DkVDD6mSjFD1ZIFabzdbW6vrIbU43WHj5otJUCn50tqst3jV3XeLBPWOTZ-NgONrhs6--SBosR8dlXosJ-iOnYYZkkCVqB_0K00F__0m00)
+
 ## 7. Giải thích biểu đồ lớp:
+- PayrollAdministrator: Người dùng (admin) tương tác với hệ thống thông qua giao diện. Lớp này gọi các phương thức của PayrollAdminUI để thực hiện các thao tác quản lý nhân viên.
+- PayrollAdminUI: Lớp giao diện người dùng, chịu trách nhiệm hiển thị các biểu mẫu, nhận thông tin từ người dùng và gửi yêu cầu đến EmployeeController.
+- EmployeeController: Lớp điều khiển xử lý các thao tác thêm, cập nhật và xóa thông tin nhân viên. Nó tương tác với Employee để thực hiện các thao tác trên dữ liệu nhân viên và EmployeeDatabase để lưu trữ hoặc truy xuất dữ liệu.
+- Employee: Lớp thực thể chứa thông tin về nhân viên (ID, tên, loại nhân viên, lương, v.v.) và các phương thức để tạo ID nhân viên và thiết lập phương thức giao lương.
+- EmployeeDatabase: Lớp quản lý cơ sở dữ liệu, thực hiện các thao tác thêm, cập nhật, xóa và tìm kiếm thông tin nhân viên trong hệ thống.
 
 # Phân tích ca sử dụng Run Payroll
 ## 1. Mô tả:
