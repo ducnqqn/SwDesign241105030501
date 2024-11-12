@@ -282,7 +282,12 @@ Ca sử dụng này cho phép Nhân viên chọn phương thức thanh toán, ba
 3. Nhân viên nộp thẻ chấm công và không thể chỉnh sửa sau khi nộp.
 4. Hệ thống kiểm tra tính hợp lệ của các giờ làm và ngừng cho phép chỉnh sửa sau khi đã nộp thẻ.
 
-## Code của từng lớp: 
+## Code của từng lớp:
+- Thư viện được sử dụng:
+```
+import java.util.*;
+```
+
 - Timecard Class:
 ```
   class Timecard {
