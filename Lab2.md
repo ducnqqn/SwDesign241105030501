@@ -169,8 +169,16 @@ Ca sử dụng này cho phép Quản trị viên Bảng lương duy trì, thêm,
 
 # Phân tích ca sử dụng Run Payroll
 ## 1. Mô tả:
+Ca sử dụng này mô tả cách thức thực hiện bảng lương vào mỗi thứ Sáu và ngày làm việc cuối cùng của tháng.
+
 ## 2. Xác định các lớp:
+- Boundary: PayrollUI.
+- Control: PayrollProcessor, BankSystem.
+- Entity: Employee, Paycheck, BankTransaction.
+  
 ## 3. Biểu đồ Sequence:
+![](https://www.planttext.com/api/plantuml/png/Z5HBKiCm3Dtx55x2WWjqmHHQ5bsHWVO0gYDQJ_tfo6fdSZOM78ahOATn4fB-iagUz9wVP2c_tp_Jm41yi4Q0Oa-oW8gyCI-brKu79eYWGCUQgnnRBOJoZkDhHWho2aFeCj_itlWAiSTKMrIx_FqARhSaS24UghrhzHB-MGL6AyGv9_BfkNCnaJ706XWRwE5HjC5UPkjk8kjY_yCTgSqxpoLaqdZ4N5jO-fXqDrs1KGTpCdk1b9KdSeESFnRkovE5rAQRj6nngIqgeF9ISMD6SI2rXO3lL29TwKbzYycVGphLKYCt2Ogmb_w1obCPIM0u9Tau5d9ToRacL2pdkFT1iv3nEISxc9wiFe2ZV18Oe9b_ch8u4UZACIdvwhBaoi4Hj86rmJgSTPlmG3Brj1fhneC4ce3zWcVrKbogislVdhJZMTFf97JdpFbuqTZkHnFHRdDzQjDgnKD6UoAc4Ks_YZy0003__mC0)
+
 ## 4. Nhiệm vụ của các lớp:
 ## 5. Quan hệ giữa các lớp:
 ## 6. Biểu đồ lớp:
