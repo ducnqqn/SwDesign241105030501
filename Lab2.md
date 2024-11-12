@@ -8,7 +8,7 @@ Ca sử dụng cho phép Quản trị viên tính lương tạo báo cáo tổng
 - Entity: Report, Employee, PayrollData
 
 ## 3. Biểu đồ Sequence:
-![](https://www.planttext.com/api/plantuml/png/f5LBRjmm3Dth53p0f0UOHP4WwM8MBO86FG1ZqGu1MN8ase3FraMFr2kKygUUfbQHcSx65aTyV8zwb7z-_t6R1AFqhJDOIOZmY6CCpjtPbZqdYQX1ynnwRp6ES1RcWRvI5w9yEvagUD4ic0FtyyfHDEI5PLpYw-fJsxam4gthfUG32XgpLnzkFXOg7nNwjQSa806gI2W4SIwsdv2Xth8yAeEKbZnzJ83cxQxta5WWPEpe07OYWxxHTreaWyUMqiKY7sCOsAxIL2WBHSQBD3wHjty167G29r-7s2f4y505PKf21lItruApmygw9J8DAeigIYaxnEPJpCbd6_S9QN8V_PQmLssE7U7-ZwFTTfUGf_yQygIT8Lk4B_NxWLFdS5phaKi4dpabzWtmrgsBSLUVj0MiQtrHmhlO7tsNNMitWsZmlsOouN3LHEfxpR5TyyiZkSTjOp2bkr3DvaPLc0UmA6ZdPbWwN03wbsUVpgI_mwsvWfq7SihquVTTT8M3lmJXUZKmM4uLHgiuqtagj3BZvaKWrFit_gcU1XCuGUznG7Rux0YqJUm7T6mF1ZrGZ1ffy-WtbFVQUN387gOUoKkXrvKcHve-FJ0lAt8VChkicuovrTVyKVe5003__mC0)
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/f5LBRjmm3Dth53p0f0UOHP4WwM8MBO86FG1ZqGu1MN8ase3FraMFr2kKygUUfbQHcSx65aTyV8zwb7z-_t6R1AFqhJDOIOZmY6CCpjtPbZqdYQX1ynnwRp6ES1RcWRvI5w9yEvagUD4ic0FtyyfHDEI5PLpYw-fJsxam4gthfUG32XgpLnzkFXOg7nNwjQSa806gI2W4SIwsdv2Xth8yAeEKbZnzJ83cxQxta5WWPEpe07OYWxxHTreaWyUMqiKY7sCOsAxIL2WBHSQBD3wHjty167G29r-7s2f4y505PKf21lItruApmygw9J8DAeigIYaxnEPJpCbd6_S9QN8V_PQmLssE7U7-ZwFTTfUGf_yQygIT8Lk4B_NxWLFdS5phaKi4dpabzWtmrgsBSLUVj0MiQtrHmhlO7tsNNMitWsZmlsOouN3LHEfxpR5TyyiZkSTjOp2bkr3DvaPLc0UmA6ZdPbWwN03wbsUVpgI_mwsvWfq7SihquVTTT8M3lmJXUZKmM4uLHgiuqtagj3BZvaKWrFit_gcU1XCuGUznG7Rux0YqJUm7T6mF1ZrGZ1ffy-WtbFVQUN387gOUoKkXrvKcHve-FJ0lAt8VChkicuovrTVyKVe5003__mC0)
 
 ## 4. Nhiệm vụ của các lớp:
 - AdministrativeReportUI (Boundary):
@@ -37,7 +37,7 @@ Ca sử dụng cho phép Quản trị viên tính lương tạo báo cáo tổng
 - PayrollData và Employee là các lớp thực thể chứa dữ liệu liên quan, trong đó PayrollData là nguồn dữ liệu chính để tạo báo cáo và Employee cung cấp thông tin nhân viên.
 
 ## 6. Biểu đồ lớp:
-![](https://www.planttext.com/api/plantuml/png/V9BFIiGm4CRlUOeSzT0NABBiuWeMHCG_U1usun9CapgP2aLyCWy-agzWiarYkrLx2FIRcTzycSdNn-VQCn3thH5YPy1xkL6jjjep0UjNlCNE4Jyqyat8mqVuqgFdKJyvJQhIlZCm7AaUCY18xxd1g9mxo-ICGIhe7I4m_iUOMTWefLax2wQnJsxP8N6ha1z_xuSEQtd7fEq-1GvNtuQUjOndKj6gfTPsnWs8rz2Yh-LLcC_PY5ebKtkqI5FxnSr5gYr-CgnHHtvieC-aYELSlqK6RVmKVGD3d64m2cMAeUBHqVEbwycNaGKnvCu8V-ovgbQB3Od5odwoVezDZ8cfoHZBzn5Y7KOTNzut0000__y30000)
+![Class Diagram](https://www.planttext.com/api/plantuml/png/V9BFIiGm4CRlUOeSzT0NABBiuWeMHCG_U1usun9CapgP2aLyCWy-agzWiarYkrLx2FIRcTzycSdNn-VQCn3thH5YPy1xkL6jjjep0UjNlCNE4Jyqyat8mqVuqgFdKJyvJQhIlZCm7AaUCY18xxd1g9mxo-ICGIhe7I4m_iUOMTWefLax2wQnJsxP8N6ha1z_xuSEQtd7fEq-1GvNtuQUjOndKj6gfTPsnWs8rz2Yh-LLcC_PY5ebKtkqI5FxnSr5gYr-CgnHHtvieC-aYELSlqK6RVmKVGD3d64m2cMAeUBHqVEbwycNaGKnvCu8V-ovgbQB3Od5odwoVezDZ8cfoHZBzn5Y7KOTNzut0000__y30000)
 
 ## 7. Giải thích biểu đồ lớp:
 - PayrollAdministrator (Actor):
@@ -89,7 +89,7 @@ Ca sử dụng này cho phép Nhân viên tạo các báo cáo về số giờ l
 - Control: EmployeeReportController.
 
 ## 3. Biểu đồ Sequence:
-![](https://www.planttext.com/api/plantuml/png/b5N1Rjim3BthAuYUitr03aE1Ti1w6OPbmywCH2TQPIcZv0p-jXtsIVk5KOhj9avhExd4fiL7yZsI-lVdxtrCoAcfdKAT0iF7-k12IwIseV46kHqiN-aGE7r_KZhunC6DFZoSh8vOaKysjN2ozszVEFmadHunuHOZ3MPiirSsAzKZmhiFLs7NWlUhePWW1T1Cc0Zu565yzDhz9RcrH8onyvI_0gdUEZsTI0UIsWEjm9I4qEzefWmXucXDdxoKOXEnnHkhs90tLn0ANUfeBrc1ZN3tBIHqy2aq7E57u6SoK8dGs2jofq1-KmoCfCi49BPq971MQ0WLw3toZi0tzPOu5i2HqtGr0jYmduAxJQ576myEsocWrnqtv2JfIxzNuYzI9nOieViIJJwfoOOx6uapgZrfYZ4FfCcpSdPe4RN5QIhgoRQ6XulHwfff9a8vioDFBAxcncdgjUeYbXuUHEe6DEQXZtWSyffNycnRlEMuJ4jvhYpNFSffOInjoPSyYhiB6fCD7b3wmsDDCuLSxArkRom0cj9tCoBZ1eLpPAF8oJGFAPj04Nn8CoJFDS7da6pLzm0O6pMooS7oi0YyGDlTlYo7uOPwgafNvoNNU3oYTRXr1BBRh8zDLLbjvP9PAVH0p6Akym3jobQC-_3RhmfxQN-siRKSPYftOWQILqtkVKuZ5qbAtSjZlYt_0m00__y30000)
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/b5N1Rjim3BthAuYUitr03aE1Ti1w6OPbmywCH2TQPIcZv0p-jXtsIVk5KOhj9avhExd4fiL7yZsI-lVdxtrCoAcfdKAT0iF7-k12IwIseV46kHqiN-aGE7r_KZhunC6DFZoSh8vOaKysjN2ozszVEFmadHunuHOZ3MPiirSsAzKZmhiFLs7NWlUhePWW1T1Cc0Zu565yzDhz9RcrH8onyvI_0gdUEZsTI0UIsWEjm9I4qEzefWmXucXDdxoKOXEnnHkhs90tLn0ANUfeBrc1ZN3tBIHqy2aq7E57u6SoK8dGs2jofq1-KmoCfCi49BPq971MQ0WLw3toZi0tzPOu5i2HqtGr0jYmduAxJQ576myEsocWrnqtv2JfIxzNuYzI9nOieViIJJwfoOOx6uapgZrfYZ4FfCcpSdPe4RN5QIhgoRQ6XulHwfff9a8vioDFBAxcncdgjUeYbXuUHEe6DEQXZtWSyffNycnRlEMuJ4jvhYpNFSffOInjoPSyYhiB6fCD7b3wmsDDCuLSxArkRom0cj9tCoBZ1eLpPAF8oJGFAPj04Nn8CoJFDS7da6pLzm0O6pMooS7oi0YyGDlTlYo7uOPwgafNvoNNU3oYTRXr1BBRh8zDLLbjvP9PAVH0p6Akym3jobQC-_3RhmfxQN-siRKSPYftOWQILqtkVKuZ5qbAtSjZlYt_0m00__y30000)
 
 ## 4. Nhiệm vụ của các lớp:
 - EmployeeReportUI (Boundary):
@@ -117,7 +117,7 @@ Ca sử dụng này cho phép Nhân viên tạo các báo cáo về số giờ l
 - Tạo thực thể: EmployeeReportController tạo và lưu trữ các báo cáo thông qua lớp Report.
   
 ## 6. Biểu đồ lớp:
-![](https://www.planttext.com/api/plantuml/png/f5H1JiCm4Bpx5JusKYlk4Qeg5H2LAeHI46StMRK1npPh9oX2l8m3J-8BE77gD0uj1tA8bDdrx6Hsak_FhuKs34rPS99ofZMzBXINDG1z9zHUCmeTiCfYkZ6OYrrN4Ao00KGfmci9sYIW99f9H3v8mEegZwkEdT8irugpUYLKQMua5lQGA-YzVFCy0_ODgs0jKsPoAKxFM4fXK78Ew6Sfb2bexUg98_Fa5UDvnWoqIZoQ8bWiqA6jW0xYdOw33qToN8Ut4Tl7Xrf1O6Fh_vMT4jFcVd1TP2FCKLY01RRlG03-hlESmdkKpv2sX5kc-ush7e_fEjVcqXsT-t5ckMUuWxkos0BgIHIqzHDOtUoWOUhP7PP0AZ7JfmOyINovbQKb7-Tl6des7TeLZUmnLaWZubzazgtynp6RpKUP9gEGZxlwL9AJSMrEEV1yJxY-s0R4AeKAWktyGNEqevx2-tzni2uYNQBFlPLZA57uA9A5jRFvlVm0003__mC0)
+![Class Diagram](https://www.planttext.com/api/plantuml/png/f5H1JiCm4Bpx5JusKYlk4Qeg5H2LAeHI46StMRK1npPh9oX2l8m3J-8BE77gD0uj1tA8bDdrx6Hsak_FhuKs34rPS99ofZMzBXINDG1z9zHUCmeTiCfYkZ6OYrrN4Ao00KGfmci9sYIW99f9H3v8mEegZwkEdT8irugpUYLKQMua5lQGA-YzVFCy0_ODgs0jKsPoAKxFM4fXK78Ew6Sfb2bexUg98_Fa5UDvnWoqIZoQ8bWiqA6jW0xYdOw33qToN8Ut4Tl7Xrf1O6Fh_vMT4jFcVd1TP2FCKLY01RRlG03-hlESmdkKpv2sX5kc-ush7e_fEjVcqXsT-t5ckMUuWxkos0BgIHIqzHDOtUoWOUhP7PP0AZ7JfmOyINovbQKb7-Tl6des7TeLZUmnLaWZubzazgtynp6RpKUP9gEGZxlwL9AJSMrEEV1yJxY-s0R4AeKAWktyGNEqevx2-tzni2uYNQBFlPLZA57uA9A5jRFvlVm0003__mC0)
 
 ## 7. Giải thích biểu đồ lớp:
 - Employee: Đại diện cho người dùng hệ thống. Nhân viên có thể yêu cầu tạo báo cáo thông qua phương thức requestReport().
@@ -137,7 +137,7 @@ Ca sử dụng này cho phép Quản trị viên Bảng lương duy trì, thêm,
 - Entity: Employee, EmployeeDatabase.
   
 ## 3. Biểu đồ Sequence:
-![](https://www.planttext.com/api/plantuml/png/x5PBRjim4Dtp5BDi5ctsNWG9uYoo260ao076uiXc8v4gEKghitNH8_KA7LgMhOyTIt6GLGLOC2ND6yvxRqZ-_VtdEZ1wBlDCOSBEmm8hxxBiHkV6ci0UvQ5Qkj9gz5NdxVEzIfnb6SDTNcIk8hgjnnbvHPODLxit_V4S6PSOIAb32U7hLI_L31xfHqc1WHtaQ2pB3sYB1iQcJdKZ-XWDzWmMtkK5Gofvf6RZB7ovqVhokT38T3cdZ9WkHi_hIRvFk452gw7mxjLe0aqooIoe0nCR4XQ19BO5quGFlsqZD4H6WjWRUYMGUUPEcxJQyoELeLAOCKYbWhxN1UGwdE6O09P-zeYF66FfMcp9EOroWgaEmAQ-uwKqJsTmwqb4xWQxvNTHS4Judkl8OWT3NAaRIxU1cf1ZfSZ_rFWSK6iJbP-Wnzo48iCAGfaa50BaSiDLx3HTIrqR-aorTnNUpoVfV6TPWD-AFg5lFtHo6mpTDLOKWIXzVtMPBanIUY_BtlGUUS0NWcIDTaKXEkkiFYatBj2dYXWIkRNFBhcdn7dzBdVNS_X8RzUhz7zlVxQtMtkdZXB4pIgfLSRT-ZMMnyOU3T9K6WU9n_BuWFvbJq6xc7VP-s3m6GQtJgpjpMhDuDAZdHca8zFDsKDEGhoEczelXg9E1BwqtvIw5hnujli7003__mC0)
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/x5PBRjim4Dtp5BDi5ctsNWG9uYoo260ao076uiXc8v4gEKghitNH8_KA7LgMhOyTIt6GLGLOC2ND6yvxRqZ-_VtdEZ1wBlDCOSBEmm8hxxBiHkV6ci0UvQ5Qkj9gz5NdxVEzIfnb6SDTNcIk8hgjnnbvHPODLxit_V4S6PSOIAb32U7hLI_L31xfHqc1WHtaQ2pB3sYB1iQcJdKZ-XWDzWmMtkK5Gofvf6RZB7ovqVhokT38T3cdZ9WkHi_hIRvFk452gw7mxjLe0aqooIoe0nCR4XQ19BO5quGFlsqZD4H6WjWRUYMGUUPEcxJQyoELeLAOCKYbWhxN1UGwdE6O09P-zeYF66FfMcp9EOroWgaEmAQ-uwKqJsTmwqb4xWQxvNTHS4Judkl8OWT3NAaRIxU1cf1ZfSZ_rFWSK6iJbP-Wnzo48iCAGfaa50BaSiDLx3HTIrqR-aorTnNUpoVfV6TPWD-AFg5lFtHo6mpTDLOKWIXzVtMPBanIUY_BtlGUUS0NWcIDTaKXEkkiFYatBj2dYXWIkRNFBhcdn7dzBdVNS_X8RzUhz7zlVxQtMtkdZXB4pIgfLSRT-ZMMnyOU3T9K6WU9n_BuWFvbJq6xc7VP-s3m6GQtJgpjpMhDuDAZdHca8zFDsKDEGhoEczelXg9E1BwqtvIw5hnujli7003__mC0)
 
 ## 4. Nhiệm vụ của các lớp:
 - PayrollAdminUI:
@@ -158,7 +158,7 @@ Ca sử dụng này cho phép Quản trị viên Bảng lương duy trì, thêm,
 - EmployeeDatabase là nơi lưu trữ dữ liệu nhân viên và hỗ trợ các thao tác với Employee.
 
 ## 6. Biểu đồ lớp:
-![](https://www.planttext.com/api/plantuml/png/Z5NRRjim37ttL-Yn0nRatGz5kte52hJ3q2mVe4XCB4mNWvIp6SE-R0_xfFt2A2_EnRAR2KY0a8T797N8_Fdr-uwYnDWwMnI2ZxAII7oM7GPhxxKptb146GEA7psWFmtWDg2xLz44V_Ek5FjWTE_-sN_FKAsVpacqeSRAxgDhREW07fdmWge_L8Tl0wA2A8sb7AI2tnfq5LZ84Zgoh5gbWEY5Ft87CpSX1fn2P6KDEJq47rDzSD4VgVK0kD4oolA8h_XNTdNRC0YE4KQNOXNH-DtxWqjNrqbqgdwA94CYi1tsCzZ1UgXxekQpIXTmi3qTAKu-BntarY7YIzTCUBbpoFtF7HIKaNO5gaKJkq-jsm3cg2Y_Lw3RNfTCKeLsO-7a3h46V0lGrC7377aTMhJTAxz77aZIIknokmhE6IA-RJekSJuRPsBc4Zlmm9F7hKrI72KZ22AFbgf1VMNTcprWzmAn3cFmh7AJY3QIO4wtmpkT575Dj_yHCH9fhfuiOclyCQSF7VVYJR4MavjhiRWTxQ5Ih0ce62sdXCi7cwy3hqcqn4DkVDD6mSjFD1ZIFabzdbW6vrIbU43WHj5otJUCn50tqst3jV3XeLBPWOTZ-NgONrhs6--SBosR8dlXosJ-iOnYYZkkCVqB_0K00F__0m00)
+![Class Diagram](https://www.planttext.com/api/plantuml/png/Z5NRRjim37ttL-Yn0nRatGz5kte52hJ3q2mVe4XCB4mNWvIp6SE-R0_xfFt2A2_EnRAR2KY0a8T797N8_Fdr-uwYnDWwMnI2ZxAII7oM7GPhxxKptb146GEA7psWFmtWDg2xLz44V_Ek5FjWTE_-sN_FKAsVpacqeSRAxgDhREW07fdmWge_L8Tl0wA2A8sb7AI2tnfq5LZ84Zgoh5gbWEY5Ft87CpSX1fn2P6KDEJq47rDzSD4VgVK0kD4oolA8h_XNTdNRC0YE4KQNOXNH-DtxWqjNrqbqgdwA94CYi1tsCzZ1UgXxekQpIXTmi3qTAKu-BntarY7YIzTCUBbpoFtF7HIKaNO5gaKJkq-jsm3cg2Y_Lw3RNfTCKeLsO-7a3h46V0lGrC7377aTMhJTAxz77aZIIknokmhE6IA-RJekSJuRPsBc4Zlmm9F7hKrI72KZ22AFbgf1VMNTcprWzmAn3cFmh7AJY3QIO4wtmpkT575Dj_yHCH9fhfuiOclyCQSF7VVYJR4MavjhiRWTxQ5Ih0ce62sdXCi7cwy3hqcqn4DkVDD6mSjFD1ZIFabzdbW6vrIbU43WHj5otJUCn50tqst3jV3XeLBPWOTZ-NgONrhs6--SBosR8dlXosJ-iOnYYZkkCVqB_0K00F__0m00)
 
 ## 7. Giải thích biểu đồ lớp:
 - PayrollAdministrator: Người dùng (admin) tương tác với hệ thống thông qua giao diện. Lớp này gọi các phương thức của PayrollAdminUI để thực hiện các thao tác quản lý nhân viên.
@@ -177,12 +177,46 @@ Ca sử dụng này mô tả cách thức thực hiện bảng lương vào mỗ
 - Entity: Employee, Paycheck, BankTransaction.
   
 ## 3. Biểu đồ Sequence:
-![](https://www.planttext.com/api/plantuml/png/Z5HBKiCm3Dtx55x2WWjqmHHQ5bsHWVO0gYDQJ_tfo6fdSZOM78ahOATn4fB-iagUz9wVP2c_tp_Jm41yi4Q0Oa-oW8gyCI-brKu79eYWGCUQgnnRBOJoZkDhHWho2aFeCj_itlWAiSTKMrIx_FqARhSaS24UghrhzHB-MGL6AyGv9_BfkNCnaJ706XWRwE5HjC5UPkjk8kjY_yCTgSqxpoLaqdZ4N5jO-fXqDrs1KGTpCdk1b9KdSeESFnRkovE5rAQRj6nngIqgeF9ISMD6SI2rXO3lL29TwKbzYycVGphLKYCt2Ogmb_w1obCPIM0u9Tau5d9ToRacL2pdkFT1iv3nEISxc9wiFe2ZV18Oe9b_ch8u4UZACIdvwhBaoi4Hj86rmJgSTPlmG3Brj1fhneC4ce3zWcVrKbogislVdhJZMTFf97JdpFbuqTZkHnFHRdDzQjDgnKD6UoAc4Ks_YZy0003__mC0)
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/Z5HBKiCm3Dtx55x2WWjqmHHQ5bsHWVO0gYDQJ_tfo6fdSZOM78ahOATn4fB-iagUz9wVP2c_tp_Jm41yi4Q0Oa-oW8gyCI-brKu79eYWGCUQgnnRBOJoZkDhHWho2aFeCj_itlWAiSTKMrIx_FqARhSaS24UghrhzHB-MGL6AyGv9_BfkNCnaJ706XWRwE5HjC5UPkjk8kjY_yCTgSqxpoLaqdZ4N5jO-fXqDrs1KGTpCdk1b9KdSeESFnRkovE5rAQRj6nngIqgeF9ISMD6SI2rXO3lL29TwKbzYycVGphLKYCt2Ogmb_w1obCPIM0u9Tau5d9ToRacL2pdkFT1iv3nEISxc9wiFe2ZV18Oe9b_ch8u4UZACIdvwhBaoi4Hj86rmJgSTPlmG3Brj1fhneC4ce3zWcVrKbogislVdhJZMTFf97JdpFbuqTZkHnFHRdDzQjDgnKD6UoAc4Ks_YZy0003__mC0)
 
 ## 4. Nhiệm vụ của các lớp:
+- PayrollUI:
+  - Cung cấp giao diện người dùng để PayrollAdministrator có thể tương tác với hệ thống.
+  - Khi PayrollAdministrator yêu cầu, PayrollUI sẽ gửi yêu cầu bắt đầu quy trình chạy bảng lương đến PayrollProcessor và hiển thị thông báo hoàn thành khi quy trình kết thúc.
+- PayrollProcessor:
+  - Chịu trách nhiệm chính trong việc thực hiện quy trình tính lương.
+- Employee:
+  - Chứa thông tin về nhân viên như mức lương, thông tin thời gian làm việc, các khoản khấu trừ và các quyền lợi khác.
+  - PayrollProcessor truy xuất các thông tin từ Employee để tính toán mức lương và hoàn thành bảng lương.
+- Paycheck:
+  - Đại diện cho bảng lương của nhân viên, chứa thông tin về số tiền thanh toán, các khoản khấu trừ và phương thức thanh toán (chuyển khoản ngân hàng hoặc séc).
+  - PayrollProcessor tạo Paycheck cho mỗi nhân viên và ghi nhận vào hệ thống.
+- BankTransaction:
+  - Đại diện cho giao dịch ngân hàng khi nhân viên nhận lương qua chuyển khoản trực tiếp.
+  - BankTransaction chứa thông tin về số tiền chuyển và tài khoản ngân hàng của nhân viên.
+- BankSystem:
+  - Chịu trách nhiệm giao tiếp với hệ thống ngân hàng để thực hiện giao dịch chuyển khoản.
+  - Nếu hệ thống ngân hàng không khả dụng, BankSystem sẽ thử gửi lại giao dịch sau một khoảng thời gian nhất định.
+    
 ## 5. Quan hệ giữa các lớp:
+- PayrollAdministrator tương tác với PayrollUI để bắt đầu quy trình.
+- PayrollUI gửi yêu cầu đến PayrollProcessor để bắt đầu và kết thúc quy trình tính lương.
+- PayrollProcessor lấy thông tin từ Employee để tính toán lương.
+- PayrollProcessor tạo bảng lương cho nhân viên và ghi nhận vào đối tượng Paycheck.
+- PayrollProcessor tạo giao dịch ngân hàng khi thanh toán bằng chuyển khoản.
+- BankTransaction gửi giao dịch đến BankSystem để thực hiện thanh toán.
+
 ## 6. Biểu đồ lớp:
+![Class Diagram](https://www.planttext.com/api/plantuml/png/d5HBJiCm4Dtd55w2H2zWeQf5iEYYKaL1h8qpRQqwTl1CYYB4oLXm9Aw0axXfNDmYy7BcpRmtFtzzV4wGXAEgq5cMCV-a5eXi8MfdjPxcXJ8AoGcoZhsrWEvvCob1480NbvpjhCfRn7iYq-Ci2iyLbbhKmJapAnjbwDuQA03kuQK2f5zP5ivAG3pIsbOO8n9iKcXPwQwaf1W3hlFA3SXjAeC33xWHPllWX44XILcJmjcYrD3tBaXIPdswlZiVOMk0g2u8nbdEsPASJp1m6b50men22rTpTckhPmq3nyPM3f-isqAUyEQGLsqvoDbSbDTTtgi072S7qhOf4bm6OrAmA6nbw9_SVVu23Cs1DZQcYBGTJIYII0VxtrGwaAfKddqgPGSvHx-iaQ28jnHCVdvl792hJq4yHPObptOq6W-kaFlJ9R_9af2zAjfa1zS0U3WatWh3fhUDmujeJv6HpNvWcmJzfl9Mhu8TOB-fddjbNI4QzUdmVczuVt7Oxqqwv7YSF1mY3eUP7QFsaM4I-p878Ks94szi_iPl0000__y30000)
+
 ## 7. Giải thích biểu đồ lớp:
+- PayrollAdministrator: Lớp này đại diện cho người quản trị. Người quản trị khởi xướng quy trình chạy bảng lương.
+- PayrollUI: Lớp giao diện người dùng giúp quản trị viên tương tác với hệ thống để yêu cầu bắt đầu quy trình chạy bảng lương.
+- PayrollProcessor: Lớp điều khiển xử lý các công việc liên quan đến việc tính toán và thanh toán bảng lương cho nhân viên.
+- Employee: Lớp này chứa thông tin về nhân viên như mức lương, số giờ làm việc và các khoản khấu trừ.
+- Paycheck: Lớp này đại diện cho bảng lương của nhân viên. Nó chứa thông tin về số tiền thanh toán, các khoản khấu trừ và phương thức thanh toán.
+- BankTransaction: Lớp này đại diện cho giao dịch ngân hàng khi thanh toán bằng chuyển khoản.
+- BankSystem: Lớp này giao tiếp với hệ thống ngân hàng để thực hiện giao dịch chuyển khoản.
 
 # Phân tích biểu đồ Select Payment Method
 ## 1. Mô tả:
