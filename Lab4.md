@@ -35,3 +35,7 @@ Các đối tượng chính trong hệ thống:
 
 ### 5. Lý do thiết kế: 
 Quy trình thiết kế trên nhằm đảm bảo tính chính xác, hiệu quả, và an toàn trong việc ghi nhận và lưu trữ giờ làm việc của nhân viên. Nó giúp hệ thống dễ dàng quản lý và theo dõi dữ liệu thời gian làm việc, đồng thời cải thiện sự giao tiếp và tích hợp giữa các bộ phận trong tổ chức.
+
+## II. Ca sử dụng: Login
+
+
