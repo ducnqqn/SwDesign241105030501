@@ -1,1 +1,6 @@
+# THIẾT KẾ LỚP PAYROLL SYSTEM
+## Xác định các operations cho UC Login
+![](https://www.planttext.com/api/plantuml/png/Z591QiCm4Bph5Jgga7p0XvBGQoa5amTivSKLo2kpMhc4qfVrq2Vr2vLYkKw33zL1xEuCcfb5tvzVXoZ0aWQlh8SOzMFe7Jq44WxU8-jtfVFnPMe81cnqA-oet-anqvVkhj4l8NW4MkWXYKaHkT6dV6Ty2gvJ7whA79Ey8ecp82vGYpmvYrKCLWp_huba-JpASsQy1UxCM8ih-bmK4ukD5crY9-UZjPZRMNy2xxgiFG-lKkmqOmo9BMvu-8rMcFMb7kKf-pUhTfqMb-QFezkzx_VtsqjgT3OKD_cdYzC127fKDz5MV8aNDLmWTK3goWVu0G00__y30000)
 
+## Các thuộc tính 
+![](https://www.planttext.com/api/plantuml/png/V55B3i8W4Drp2fOsiHVemjGqxboOD1u0OT8I4SmmhIR6axdmI5v1g3NznCXgUBmVy7eySqy2gJaP9etmdczTfMtXBA4p1f3V60yBB04M22eCMXY_iE846Iy9jQsM_1oKtrtI2LfXj184OqsIyODp1eJjA2OcxJrWF6YTLkpE-X8HBG5RBQ4l86kGnmXlhjhJD7_cMm55uYuONHogEVKp35dhXkffbWZ8lmiESS64pHyiJLVZ_XblFFYVh55opyh1glWLRm000F__0m00)
